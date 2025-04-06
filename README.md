@@ -93,22 +93,22 @@ npm start
 
 1. **Launch the Codespace** from this GitHub repository.
 2. **Start the Backend:**
-   - Open a terminal and run:
+   Open a terminal and run:
      ```bash
      cd uartsimulation
      mvn spring-boot:run
      ```
 3. **Start the Frontend:**
-   - Open another terminal and run:
+   Open another terminal and run:
      ```bash
      cd uart-frontend
      npm install
      npm start
      ```
 4. **Access the Application:**
-   - Use the Codespaces **Ports** tab to forward:
-     - **Port 8080** for the backend
-     - **Port 4200** for the frontend
+   Use the Codespaces **Ports** tab to forward:
+     **Port 8080** for the backend
+     **Port 4200** for the frontend
 
 ---
 
@@ -149,22 +149,32 @@ Use a relative path for the WebSocket connection:
 new SockJS('/ws');
 ```
 
-### Java Version Troubleshooting
+## Java Version Troubleshooting
 
 If you encounter issues running the backend, make sure Java 21 is selected:
-
+```bash
 java -version
-
+```
 To switch Java versions in Codespaces:
-
+```bash
 sudo update-alternatives --config java
-
+```
 Or export it manually in your shell config:
-
+```bash
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
+```
 
-
+If there are no alternatives, run the following command to install java 21:
+```bash
+sudo add-apt-repository ppa:openjdk-r/ppa
+```
+Press enter and continue to:
+```bash
+sudo apt update
+sudo apt install openjdk-21-jdk
+```
+Press 'Y' and continue:
 
 
 ## Features
